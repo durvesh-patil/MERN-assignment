@@ -7,7 +7,7 @@ Ensure that you have the following installed on your machine:
 - Node.js
 - npm (Node Package Manager)
 
-### Install dependencies
+### 1.Install dependencies
 
 ```bash
 cd backend
@@ -16,3 +16,17 @@ cd ..
 cd frontend
 npm intstall
 ```
+
+### 2.Start project
+
+```bash
+cd backend
+npm run dev
+cd ..
+cd frontend
+npm run start
+```
+
+### 3.MongoDB config
+
+    Make sure to add .env file in backend with your mongo URI
