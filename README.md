@@ -29,4 +29,4 @@ npm run start
 
 ### 3.MongoDB config
 
-    Make sure to add .env file in backend with your mongo URI
+    Make sure to add .env file in backend with your mongo URI(Atlas)
