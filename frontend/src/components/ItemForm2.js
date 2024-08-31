@@ -41,14 +41,15 @@ const ItemForm = ({ currentItem, setCurrentItem, refreshItems }) => {
           headers: { "Content-Type": "multipart/form-data" },
         });
       }
-      //refresh the items after saving the item
+    } catch (error) {
+      console.error("There was an error saving the item!", error);
+    } finally {
+      //refresh the items after saving the items
       refreshItems();
       setTitle("");
       setDescription("");
       setImage(null);
       setCurrentItem(null);
-    } catch (error) {
-      console.error("There was an error saving the item!", error);
     }
   };
 
