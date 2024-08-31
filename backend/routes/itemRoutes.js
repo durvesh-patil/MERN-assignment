@@ -37,7 +37,7 @@ router.post("/", upload.single("image"), async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const items = await Item.find();
-    res.json(items);
+    res.status(200).json(items);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -68,7 +68,7 @@ router.put("/:id", upload.single("image"), async (req, res) => {
     item.description = req.body.description;
 
     const updatedItem = await item.save();
-    res.json(updatedItem);
+    res.status(200).json(updatedItem);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
@@ -90,7 +90,7 @@ router.delete("/:id", async (req, res) => {
         if (err) console.error("Failed to delete image:", err);
       });
     }
-    res.json({ message: "Item deleted" });
+    res.status(204).json({ message: "Item deleted" });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
